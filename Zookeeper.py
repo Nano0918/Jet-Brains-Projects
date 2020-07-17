@@ -127,12 +127,12 @@ It seems there will be more rabbits soon!"""
 list_of_animals = [camel, lion, deer, goose, bat, rabbit]
 
 while True:
-    number_of_animal_or_exit = input("Which habitat # do you need?(Type 'exit' to close the program) ")
+    number_of_animal_or_exit = input("Which habitat # do you need?(Type 'exit' to close the program)\n1. Camel 2. Lion 3. Deer 4. Goose 5. Bat 6. Rabbit - ")
 
     while number_of_animal_or_exit.isalpha():
         if number_of_animal_or_exit != "exit":
-            print("\nInvalid Input. Please enter a number between 0 and 5 or the word 'exit'.")
-            number_of_animal_or_exit = input("Which habitat # do you need?(Type 'exit' to close the program) ")
+            print("\nInvalid Input. Please enter a number between 1 and 6 or the word 'exit'.")
+            number_of_animal_or_exit = input("Which habitat # do you need?(Type 'exit' to close the program)\n1. Camel 2. Lion 3. Deer 4. Goose 5. Bat 6. Rabbit - ")
 
         elif number_of_animal_or_exit == "exit":
             break
@@ -142,20 +142,20 @@ while True:
 
 
     while number_of_animal_or_exit.isnumeric():
-        if (int(number_of_animal_or_exit) < 0) or (int(number_of_animal_or_exit) > 5):
-            print("\nInvalid Input. Please enter a number between 0 and 5 or the word 'exit'.")
-            number_of_animal_or_exit = input("Which habitat # do you need?(Type 'exit' to close the program) ")
+        if (int(number_of_animal_or_exit) < 1) or (int(number_of_animal_or_exit) > 6):
+            print("\nInvalid Input. Please enter a number between 1 and 6 or the word 'exit'.")
+            number_of_animal_or_exit = input("Which habitat # do you need?(Type 'exit' to close the program)\n1. Camel 2. Lion 3. Deer 4. Goose 5. Bat 6. Rabbit - ")
 
         if number_of_animal_or_exit == "exit":
             break
         
         elif number_of_animal_or_exit.isalpha():
-            print("\nInvalid Input. Please enter a number between 0 and 5 or the word 'exit'.")
-            number_of_animal_or_exit = input("Which habitat # do you need?(Type 'exit' to close the program) ")
+            print("\nInvalid Input. Please enter a number between 1 and 6 or the word 'exit'.")
+            number_of_animal_or_exit = input("Which habitat # do you need?(Type 'exit' to close the program)\n1. Camel 2. Lion 3. Deer 4. Goose 5. Bat 6. Rabbit - ")
 
         else:
             print()
-            print(list_of_animals[int(number_of_animal_or_exit)])
+            print(list_of_animals[int(number_of_animal_or_exit) - 1])
             print("---")
             print("The end of the program. To check another habitat restart the watcher please.\n")
             break
