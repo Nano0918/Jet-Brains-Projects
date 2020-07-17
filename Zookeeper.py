@@ -1,6 +1,7 @@
 # Orlando Rodriguez
 # A short coding challenge that is meant to help the local zoo look after its animals. The program shold be a tool for monitoring animals and their status.
 
+
 camel = r"""
 Switching on camera from habitat with camels...
  ___.-''''-.
@@ -123,14 +124,44 @@ Switching on camera from habitat with rabbits...
 It seems there will be more rabbits soon!"""
 
 
-# write your code here
 list_of_animals = [camel, lion, deer, goose, bat, rabbit]
+
 while True:
-   number_of_animal = input("Which habitat # do you need? ")
-   if number_of_animal == "exit":
-      break
-   print()
-   print(list_of_animals[int(number_of_animal)])
-   print("---")
-   print("The end of the program. To check another habitat restart the watcher please.")
-print("See you!")
+    number_of_animal_or_exit = input("Which habitat # do you need?(Type 'exit' to close the program) ")
+
+    while number_of_animal_or_exit.isalpha():
+        if number_of_animal_or_exit != "exit":
+            print("\nInvalid Input. Please enter a number between 0 and 5 or the word 'exit'.")
+            number_of_animal_or_exit = input("Which habitat # do you need?(Type 'exit' to close the program) ")
+
+        elif number_of_animal_or_exit == "exit":
+            break
+
+        elif number_of_animal_or_exit.isnumeric():
+            break
+
+
+    while number_of_animal_or_exit.isnumeric():
+        if (int(number_of_animal_or_exit) < 0) or (int(number_of_animal_or_exit) > 5):
+            print("\nInvalid Input. Please enter a number between 0 and 5 or the word 'exit'.")
+            number_of_animal_or_exit = input("Which habitat # do you need?(Type 'exit' to close the program) ")
+
+        if number_of_animal_or_exit == "exit":
+            break
+        
+        elif number_of_animal_or_exit.isalpha():
+            print("\nInvalid Input. Please enter a number between 0 and 5 or the word 'exit'.")
+            number_of_animal_or_exit = input("Which habitat # do you need?(Type 'exit' to close the program) ")
+
+        else:
+            print()
+            print(list_of_animals[int(number_of_animal_or_exit)])
+            print("---")
+            print("The end of the program. To check another habitat restart the watcher please.\n")
+            break
+        
+    if number_of_animal_or_exit == "exit":
+        break
+
+
+print("\nSee you!\n")
