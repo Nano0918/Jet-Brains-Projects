@@ -1,7 +1,7 @@
 # Orlando Rodriguez
 # A short coding challenge that is meant to help the local zoo look after its animals. The program shold be a tool for monitoring animals and their status.
 
-
+# This is the list of the animals that are kept in the zoo.
 camel = r"""
 Switching on camera from habitat with camels...
  ___.-''''-.
